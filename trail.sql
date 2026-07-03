@@ -1,0 +1,12 @@
+show databases;
+use quickbite_db;
+create table users(user_id varchar(50),user_name varchar(50),email varchar(50),city varchar(20),wallet_balance decimal(10,2));
+desc users;
+insert into users values(1,'Radhika', 'radhika@gmail.com','Hyderabad',45000.00),(2,'Rajini','rajini@gmail.com','Warangal',45000.00),(3,'Deepika','deepika@gmail.com','Mahabubabad',40000.00);
+select*from users;
+SET SQL_SAFE_UPDATES=0;
+update users set wallet_balance = 40000.00 where user_id IN ('1','2');
+update users set city='warangal'where user_id=1;
+select*from users;
+delete from users where user_id=1;
+select*from users;
